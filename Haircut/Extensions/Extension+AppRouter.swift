@@ -19,7 +19,7 @@ extension View {
             case .historyView:
                 HistoryView()
             case .profileView:
-                ProfileView()
+                ProfileView(client: Client(firstName: "Isaac", lastName: "Sanchez", email: "abcdefs@hotmail.com", gender: .male))
             }
         }
     }

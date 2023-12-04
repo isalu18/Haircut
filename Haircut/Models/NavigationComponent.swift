@@ -23,13 +23,15 @@ struct NavigationComponent<T: View>: View {
                     case .historyView:
                         HistoryView()
                     case .profileView:
-                        ProfileView()
+                        ProfileView(client: Client(firstName: "Isaac", lastName: "Sanchez", email: "abcdefs@hotmail.com", gender: .male))
                     }
                 }
                 .sheet(isPresented: $navigationVM.showSheet) {
                     switch navigationVM.sheet {
                     case .testSheet:
                         SheetTestView(title: "Test Sheet")
+                    case .historySheet:
+                        HistorySheet()
                     default:
                         SheetTestView(title: "Error: Sheet not recognized")
                     }

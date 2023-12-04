@@ -18,7 +18,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("History", systemImage: "list.bullet")
                 }
-            ProfileView()
+            ProfileView(client: Client(firstName: "Isaac", lastName: "Sanchez", email: "abcdefs@hotmail.com", gender: .male))
                 .tabItem {
                     Label("Profile", systemImage: "person.crop.square")
                 }

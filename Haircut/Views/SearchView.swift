@@ -13,16 +13,16 @@ struct SearchView: View {
     var body: some View {
         NavigationComponent(stack: $navigationVM.stack) {
             ScrollView {
-                VStack {
-                    Text("Search View")
-                    Button("Go To HistoryView") {
-                        navigationVM.navigate(to: .historyView)
-                    }
-                    .padding(.bottom)
-                    Button("Go To Test Sheet") {
-                        navigationVM.showSheet(.testSheet)
-                    }
-                }
+//                VStack {
+//                    Text("Search View")
+//                    Button("Go To HistoryView") {
+//                        navigationVM.navigate(to: .historyView)
+//                    }
+//                    .padding(.bottom)
+//                    Button("Go To Test Sheet") {
+//                        navigationVM.showSheet(.testSheet)
+//                    }
+//                }
                 ForEach(examples, id: \.id) { salon in
                     HaircutSalonCard(haircutSalon: salon)
                 }

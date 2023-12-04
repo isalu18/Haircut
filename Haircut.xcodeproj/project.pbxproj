@@ -18,6 +18,8 @@
 		58A2E7802AE738FF00BE5F0C /* HaircutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A2E77F2AE738FF00BE5F0C /* HaircutTests.swift */; };
 		58A2E78A2AE738FF00BE5F0C /* HaircutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A2E7892AE738FF00BE5F0C /* HaircutUITests.swift */; };
 		58A2E78C2AE738FF00BE5F0C /* HaircutUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A2E78B2AE738FF00BE5F0C /* HaircutUITestsLaunchTests.swift */; };
+		58AA4BAA2B1D7D350084DD57 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AA4BA92B1D7D350084DD57 /* Client.swift */; };
+		58AA4BAC2B1D83CF0084DD57 /* HistorySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AA4BAB2B1D83CF0084DD57 /* HistorySheet.swift */; };
 		58B0767B2AEDDA6B00E06EE2 /* NavigationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B0767A2AEDDA6B00E06EE2 /* NavigationComponent.swift */; };
 		58C2C07F2B0C7A07003C15A0 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2C07E2B0C7A07003C15A0 /* SearchViewModel.swift */; };
 		58CF44E82AE8D2610049F541 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CF44E72AE8D2610049F541 /* HistoryView.swift */; };
@@ -61,6 +63,8 @@
 		58A2E7852AE738FF00BE5F0C /* HaircutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HaircutUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58A2E7892AE738FF00BE5F0C /* HaircutUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaircutUITests.swift; sourceTree = "<group>"; };
 		58A2E78B2AE738FF00BE5F0C /* HaircutUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaircutUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		58AA4BA92B1D7D350084DD57 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		58AA4BAB2B1D83CF0084DD57 /* HistorySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySheet.swift; sourceTree = "<group>"; };
 		58B0767A2AEDDA6B00E06EE2 /* NavigationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationComponent.swift; sourceTree = "<group>"; };
 		58C2C07E2B0C7A07003C15A0 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		58CF44E72AE8D2610049F541 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
@@ -174,6 +178,7 @@
 				580C35F12AF8368E003D44E4 /* SheetTestView.swift */,
 				580C35F32AF87635003D44E4 /* BaseSheet.swift */,
 				587B06BC2B11955C000DD834 /* HaircutSalonCard.swift */,
+				58AA4BAB2B1D83CF0084DD57 /* HistorySheet.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 				58CF44EF2AE8D55D0049F541 /* ActiveScreen.swift */,
 				58CF44F12AE8D5670049F541 /* ActiveSheet.swift */,
 				587B06BA2B1194C7000DD834 /* HaircutSalon.swift */,
+				58AA4BA92B1D7D350084DD57 /* Client.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -341,6 +347,8 @@
 				58B0767B2AEDDA6B00E06EE2 /* NavigationComponent.swift in Sources */,
 				587B06BB2B1194C7000DD834 /* HaircutSalon.swift in Sources */,
 				58CF44EC2AE8D29B0049F541 /* SearchView.swift in Sources */,
+				58AA4BAC2B1D83CF0084DD57 /* HistorySheet.swift in Sources */,
+				58AA4BAA2B1D7D350084DD57 /* Client.swift in Sources */,
 				58CF44F22AE8D5670049F541 /* ActiveSheet.swift in Sources */,
 				58CF44EA2AE8D26E0049F541 /* ProfileView.swift in Sources */,
 				58A2E7712AE738FE00BE5F0C /* ContentView.swift in Sources */,
