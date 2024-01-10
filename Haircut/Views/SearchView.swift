@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct SearchView: View {
+    @FetchRequest(sortDescriptors: [
+        SortDescriptor(\.rate)
+    ]) var salons: FetchedResults<HaircutSalon>
     @ObservedObject var navigationVM = NavigationViewModel.shared
     @StateObject var viewModel = SearchViewModel()
+    
+    @State private var showAddHaircutSalonSheet = false
     var body: some View {
         NavigationComponent(stack: $navigationVM.stack) {
             ScrollView {
@@ -23,22 +28,28 @@ struct SearchView: View {
 //                        navigationVM.showSheet(.testSheet)
 //                    }
 //                }
-                ForEach(examples, id: \.id) { salon in
-                    HaircutSalonCard(haircutSalon: salon)
+                VStack {
+                    ForEach(salons, id: \.id) { salon in
+                        // TODO: Eliminar elemento de Core Data
+                        HaircutSalonCard(haircutSalon: salon)
+                    }
+                }
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button {
+                            navigationVM.showSheet(.addHairCutSalonSheet)
+                        } label: {
+                            Label("Add", systemImage: "plus")
+                        }
+                    }
                 }
                 
+                
             }
-            // TODO: Tiene un bug donde se mueve rara toda la vista por el searchbar
-//            .searchable(text: $viewModel.searchText, prompt: "Find you Haircut salon...")
+            // Ojo por si sale bug donde se mueve rara toda la vista por el searchbar
+            .searchable(text: $viewModel.searchText, prompt: "Find you Haircut salon...")
         }
     }
-    
-    let examples: [HaircutSalon] = [
-        HaircutSalon(id: UUID().uuidString, name: "Barberia 1", image: "placeholder", address: "26985 Brighton Lane, Lake Forest, CA 92630", rate: 4.5),
-        HaircutSalon(id: UUID().uuidString, name: "Barberia 2", image: "placeholder", address: "26985 Brighton Lane, Lake Forest, CA 92630", rate: 3.9),
-        HaircutSalon(id: UUID().uuidString, name: "Barberia 3", image: "placeholder", address: "26985 Brighton Lane, Lake Forest, CA 92630", rate: 4.2),
-        HaircutSalon(id: UUID().uuidString, name: "Barberia 4", image: "placeholder", address: "26985 Brighton Lane, Lake Forest, CA 92630", rate: 5.0),
-        HaircutSalon(id: UUID().uuidString, name: "Barberia 5", image: "placeholder", address: "26985 Brighton Lane, Lake Forest, CA 92630", rate: 3.7)]
 }
 
 #Preview {

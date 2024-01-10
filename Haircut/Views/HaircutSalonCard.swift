@@ -8,26 +8,26 @@
 import SwiftUI
 
 struct HaircutSalonCard: View {
-    let haircutSalon: HaircutSalon
+    let haircutSalon: FetchedResults<HaircutSalon>.Element
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 10, style: .continuous)
                 .fill(.white)
                 .shadow(radius: 10)
             VStack(alignment: .leading) {
-                Text(haircutSalon.name)
+                Text(haircutSalon.name ?? "Unknown")
                     .font(.title3)
                     .fontWeight(.bold)
-                Image("haircut")
+                Image(haircutSalon.image ?? "Unknown")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .cornerRadius(10)
                 VStack(alignment: .leading) {
-                    Text("Address: \(haircutSalon.address)")
+                    Text("Address: \(haircutSalon.address ?? "Unknown")")
                         .font(.body)
                         .padding(.bottom, 5)
                     HStack {
-                        Text("Rate: \(haircutSalon.rateRounded)")
+                        Text("Rate: \(haircutSalon.rate ?? "0")")
                             .font(.body)
                         Image(systemName: "star.fill")
                             .foregroundColor(.yellow)
@@ -42,6 +42,6 @@ struct HaircutSalonCard: View {
     }
 }
 
-#Preview {
-    HaircutSalonCard(haircutSalon: HaircutSalon(id: "1", name: "test", image: "haircut", address: "test", rate: 4.5))
-}
+//#Preview {
+//    HaircutSalonCard(haircutSalon: HaircutSalon(id: "1", name: "test", image: "haircut", address: "test", rate: 4.5))
+//}

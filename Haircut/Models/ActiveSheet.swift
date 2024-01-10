@@ -10,4 +10,5 @@ import Foundation
 enum ActiveSheet {
     case testSheet
     case historySheet
+    case addHairCutSalonSheet
 }

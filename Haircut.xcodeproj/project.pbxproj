@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		580C35F22AF8368E003D44E4 /* SheetTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580C35F12AF8368E003D44E4 /* SheetTestView.swift */; };
 		580C35F42AF87635003D44E4 /* BaseSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580C35F32AF87635003D44E4 /* BaseSheet.swift */; };
-		587B06BB2B1194C7000DD834 /* HaircutSalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B06BA2B1194C7000DD834 /* HaircutSalon.swift */; };
+		5873D6E32B4A31DA00C881E9 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5873D6E22B4A31DA00C881E9 /* DataController.swift */; };
+		5873D6E52B4A39F300C881E9 /* AddHaircutSalonSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5873D6E42B4A39F300C881E9 /* AddHaircutSalonSheet.swift */; };
+		587AF02F2B4B76E600F90263 /* Haircut.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 587AF02D2B4B76E600F90263 /* Haircut.xcdatamodeld */; };
+		587B06BB2B1194C7000DD834 /* HaircutSalonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B06BA2B1194C7000DD834 /* HaircutSalonModel.swift */; };
 		587B06BD2B11955C000DD834 /* HaircutSalonCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587B06BC2B11955C000DD834 /* HaircutSalonCard.swift */; };
 		58A2E76F2AE738FE00BE5F0C /* HaircutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A2E76E2AE738FE00BE5F0C /* HaircutApp.swift */; };
 		58A2E7712AE738FE00BE5F0C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A2E7702AE738FE00BE5F0C /* ContentView.swift */; };
@@ -51,7 +54,10 @@
 /* Begin PBXFileReference section */
 		580C35F12AF8368E003D44E4 /* SheetTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetTestView.swift; sourceTree = "<group>"; };
 		580C35F32AF87635003D44E4 /* BaseSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSheet.swift; sourceTree = "<group>"; };
-		587B06BA2B1194C7000DD834 /* HaircutSalon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaircutSalon.swift; sourceTree = "<group>"; };
+		5873D6E22B4A31DA00C881E9 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		5873D6E42B4A39F300C881E9 /* AddHaircutSalonSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHaircutSalonSheet.swift; sourceTree = "<group>"; };
+		587AF02E2B4B76E600F90263 /* Haircut.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Haircut.xcdatamodel; sourceTree = "<group>"; };
+		587B06BA2B1194C7000DD834 /* HaircutSalonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaircutSalonModel.swift; sourceTree = "<group>"; };
 		587B06BC2B11955C000DD834 /* HaircutSalonCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaircutSalonCard.swift; sourceTree = "<group>"; };
 		58A2E76B2AE738FE00BE5F0C /* Haircut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Haircut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58A2E76E2AE738FE00BE5F0C /* HaircutApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaircutApp.swift; sourceTree = "<group>"; };
@@ -139,6 +145,7 @@
 				58A2E76E2AE738FE00BE5F0C /* HaircutApp.swift */,
 				58A2E7722AE738FF00BE5F0C /* Assets.xcassets */,
 				58A2E7742AE738FF00BE5F0C /* Preview Content */,
+				587AF02D2B4B76E600F90263 /* Haircut.xcdatamodeld */,
 			);
 			path = Haircut;
 			sourceTree = "<group>";
@@ -179,6 +186,7 @@
 				580C35F32AF87635003D44E4 /* BaseSheet.swift */,
 				587B06BC2B11955C000DD834 /* HaircutSalonCard.swift */,
 				58AA4BAB2B1D83CF0084DD57 /* HistorySheet.swift */,
+				5873D6E42B4A39F300C881E9 /* AddHaircutSalonSheet.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -189,7 +197,7 @@
 				58B0767A2AEDDA6B00E06EE2 /* NavigationComponent.swift */,
 				58CF44EF2AE8D55D0049F541 /* ActiveScreen.swift */,
 				58CF44F12AE8D5670049F541 /* ActiveSheet.swift */,
-				587B06BA2B1194C7000DD834 /* HaircutSalon.swift */,
+				587B06BA2B1194C7000DD834 /* HaircutSalonModel.swift */,
 				58AA4BA92B1D7D350084DD57 /* Client.swift */,
 			);
 			path = Models;
@@ -200,6 +208,7 @@
 			children = (
 				58CF44F62AE8D7EE0049F541 /* NavigationViewModel.swift */,
 				58C2C07E2B0C7A07003C15A0 /* SearchViewModel.swift */,
+				5873D6E22B4A31DA00C881E9 /* DataController.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -342,21 +351,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				587AF02F2B4B76E600F90263 /* Haircut.xcdatamodeld in Sources */,
 				58CF44F72AE8D7EE0049F541 /* NavigationViewModel.swift in Sources */,
 				587B06BD2B11955C000DD834 /* HaircutSalonCard.swift in Sources */,
 				58B0767B2AEDDA6B00E06EE2 /* NavigationComponent.swift in Sources */,
-				587B06BB2B1194C7000DD834 /* HaircutSalon.swift in Sources */,
+				587B06BB2B1194C7000DD834 /* HaircutSalonModel.swift in Sources */,
 				58CF44EC2AE8D29B0049F541 /* SearchView.swift in Sources */,
 				58AA4BAC2B1D83CF0084DD57 /* HistorySheet.swift in Sources */,
 				58AA4BAA2B1D7D350084DD57 /* Client.swift in Sources */,
 				58CF44F22AE8D5670049F541 /* ActiveSheet.swift in Sources */,
 				58CF44EA2AE8D26E0049F541 /* ProfileView.swift in Sources */,
+				5873D6E32B4A31DA00C881E9 /* DataController.swift in Sources */,
 				58A2E7712AE738FE00BE5F0C /* ContentView.swift in Sources */,
 				580C35F42AF87635003D44E4 /* BaseSheet.swift in Sources */,
 				58CF44F02AE8D55D0049F541 /* ActiveScreen.swift in Sources */,
 				58CF44E82AE8D2610049F541 /* HistoryView.swift in Sources */,
 				58CF44F52AE8D6BA0049F541 /* Extension+AppRouter.swift in Sources */,
 				58C2C07F2B0C7A07003C15A0 /* SearchViewModel.swift in Sources */,
+				5873D6E52B4A39F300C881E9 /* AddHaircutSalonSheet.swift in Sources */,
 				58A2E76F2AE738FE00BE5F0C /* HaircutApp.swift in Sources */,
 				580C35F22AF8368E003D44E4 /* SheetTestView.swift in Sources */,
 			);
@@ -683,6 +695,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		587AF02D2B4B76E600F90263 /* Haircut.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				587AF02E2B4B76E600F90263 /* Haircut.xcdatamodel */,
+			);
+			currentVersion = 587AF02E2B4B76E600F90263 /* Haircut.xcdatamodel */;
+			path = Haircut.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 58A2E7632AE738FE00BE5F0C /* Project object */;
 }

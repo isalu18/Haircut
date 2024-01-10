@@ -32,6 +32,8 @@ struct NavigationComponent<T: View>: View {
                         SheetTestView(title: "Test Sheet")
                     case .historySheet:
                         HistorySheet()
+                    case .addHairCutSalonSheet:
+                        AddHaircutSalonSheet()
                     default:
                         SheetTestView(title: "Error: Sheet not recognized")
                     }
