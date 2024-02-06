@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct HaircutSalonCard: View {
+    @Environment(\.managedObjectContext) var moc
+    @ObservedObject var navigationVM = NavigationViewModel.shared
+    
+    @State private var showAddHaircutSalonSheet = false
+    @State private var showingDeleteAlert = false
+    @State private var showingDeletedSalon = false
+    
     let haircutSalon: FetchedResults<HaircutSalon>.Element
     var body: some View {
         ZStack {
@@ -38,7 +45,29 @@ struct HaircutSalonCard: View {
             .padding()
         }
         .frame(height: UIScreen.main.bounds.width)
-        .padding(.horizontal, 10)
+        .padding(.horizontal, 15)
+        .onLongPressGesture {
+            navigationVM.showSheet(.editHairCutSalonSheet(salon: haircutSalon))
+        }
+        .onTapGesture(count: 2) {
+            showingDeleteAlert = true
+        }
+        .alert("Are you sure you want to delete this salon?", isPresented: $showingDeleteAlert) {
+            Button("Cancel", role: .cancel) { showingDeleteAlert = false }
+            Button("Delete", role: .destructive) {
+                moc.delete(haircutSalon)
+                do {
+                    try moc.save()
+                    showingDeletedSalon = true
+                } catch {
+                    print(error)
+                }
+                showingDeleteAlert = false
+            }
+        }
+        .alert("Salon Deleted Successfully", isPresented: $showingDeletedSalon) {
+            Button("OK", role: .cancel) { showingDeletedSalon = false }
+        }
     }
 }
 

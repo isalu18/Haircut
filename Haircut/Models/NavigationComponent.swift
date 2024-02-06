@@ -11,6 +11,8 @@ import SwiftUI
 struct NavigationComponent<T: View>: View {
     @ObservedObject var navigationVM = NavigationViewModel.shared
     @Binding var stack: [ActiveScreen]
+//    let haircutSalon: FetchedResults<HaircutSalon>.Element
+    
     var root: () -> T
     
     var body: some View {
@@ -34,6 +36,8 @@ struct NavigationComponent<T: View>: View {
                         HistorySheet()
                     case .addHairCutSalonSheet:
                         AddHaircutSalonSheet()
+                    case .editHairCutSalonSheet(salon: let salon):
+                        EditHaircutSalonSheet(haircutSalon: salon)
                     default:
                         SheetTestView(title: "Error: Sheet not recognized")
                     }

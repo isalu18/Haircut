@@ -11,10 +11,10 @@ struct SearchView: View {
     @FetchRequest(sortDescriptors: [
         SortDescriptor(\.rate)
     ]) var salons: FetchedResults<HaircutSalon>
+    
     @ObservedObject var navigationVM = NavigationViewModel.shared
     @StateObject var viewModel = SearchViewModel()
     
-    @State private var showAddHaircutSalonSheet = false
     var body: some View {
         NavigationComponent(stack: $navigationVM.stack) {
             ScrollView {
@@ -30,7 +30,6 @@ struct SearchView: View {
 //                }
                 VStack {
                     ForEach(salons, id: \.id) { salon in
-                        // TODO: Eliminar elemento de Core Data
                         HaircutSalonCard(haircutSalon: salon)
                     }
                 }
@@ -46,7 +45,7 @@ struct SearchView: View {
                 
                 
             }
-            // Ojo por si sale bug donde se mueve rara toda la vista por el searchbar
+            // TODO: Empezar con Search
             .searchable(text: $viewModel.searchText, prompt: "Find you Haircut salon...")
         }
     }

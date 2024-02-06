@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum ActiveSheet {
     case testSheet
     case historySheet
     case addHairCutSalonSheet
+    case editHairCutSalonSheet(salon: FetchedResults<HaircutSalon>.Element)
 }
