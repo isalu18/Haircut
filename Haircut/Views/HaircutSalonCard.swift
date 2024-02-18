@@ -9,13 +9,14 @@ import SwiftUI
 
 struct HaircutSalonCard: View {
     @Environment(\.managedObjectContext) var moc
-    @ObservedObject var navigationVM = NavigationViewModel.shared
+    @ObservedObject var navigationVM = AppRouter.shared
     
     @State private var showAddHaircutSalonSheet = false
     @State private var showingDeleteAlert = false
     @State private var showingDeletedSalon = false
     
-    let haircutSalon: FetchedResults<HaircutSalon>.Element
+//    let haircutSalon: FetchedResults<HaircutSalon>.Element
+    let haircutSalon: HaircutSalon
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 10, style: .continuous)

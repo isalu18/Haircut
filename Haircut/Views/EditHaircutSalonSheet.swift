@@ -11,7 +11,7 @@ import SwiftUI
 
 struct EditHaircutSalonSheet: View {
     @Environment(\.managedObjectContext) var moc
-    @ObservedObject var navigationVM = NavigationViewModel.shared
+    @ObservedObject var navigationVM = AppRouter.shared
     
     @State private var salonName = ""
     @State private var salonAddress = ""

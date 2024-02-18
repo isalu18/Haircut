@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HistoryView: View {   
-    @ObservedObject var navigationVM = NavigationViewModel.shared
+    @ObservedObject var navigationVM = AppRouter.shared
     var body: some View {
         NavigationComponent(stack: $navigationVM.stack) {
             VStack {

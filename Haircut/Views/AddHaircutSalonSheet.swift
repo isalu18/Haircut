@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AddHaircutSalonSheet: View {
     @Environment(\.managedObjectContext) var moc
-    @ObservedObject var navigationVM = NavigationViewModel.shared
+    @ObservedObject var navigationVM = AppRouter.shared
     
     @State private var salonModel = HaircutSalonModel(id: UUID(), name: "", image: "", address: "", rate: 0)
     var body: some View {

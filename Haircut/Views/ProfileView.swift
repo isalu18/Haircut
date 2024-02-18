@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @ObservedObject var navigationVM = NavigationViewModel.shared
+    @ObservedObject var navigationVM = AppRouter.shared
     let client: Client
     var body: some View {
         NavigationComponent(stack: $navigationVM.stack) {

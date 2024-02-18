@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BaseSheet<Content>: View where Content: View {
-    @ObservedObject var navigationVM = NavigationViewModel.shared
+    @ObservedObject var navigationVM = AppRouter.shared
     let content: Content
     init(@ViewBuilder content: () -> Content) {
         self.content = content()

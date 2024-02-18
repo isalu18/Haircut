@@ -12,11 +12,11 @@ struct SearchView: View {
         SortDescriptor(\.rate)
     ]) var salons: FetchedResults<HaircutSalon>
     
-    @ObservedObject var navigationVM = NavigationViewModel.shared
-    @StateObject var viewModel = SearchViewModel()
+    @ObservedObject var appRouter = AppRouter.shared
+    @State private var searchText = ""
     
     var body: some View {
-        NavigationComponent(stack: $navigationVM.stack) {
+        NavigationComponent(stack: $appRouter.stack) {
             ScrollView {
 //                VStack {
 //                    Text("Search View")
@@ -36,17 +36,17 @@ struct SearchView: View {
                 .toolbar {
                     ToolbarItem(placement: .topBarTrailing) {
                         Button {
-                            navigationVM.showSheet(.addHairCutSalonSheet)
+                            appRouter.showSheet(.addHairCutSalonSheet)
                         } label: {
                             Label("Add", systemImage: "plus")
                         }
                     }
                 }
-                
-                
             }
-            // TODO: Empezar con Search
-            .searchable(text: $viewModel.searchText, prompt: "Find you Haircut salon...")
+            .searchable(text: $searchText, prompt: "Find you Haircut salon...")
+            .onChange(of: searchText) { newValue in
+                salons.nsPredicate = newValue.isEmpty ? nil : NSPredicate(format: "name CONTAINS %@", newValue)
+            }
         }
     }
 }

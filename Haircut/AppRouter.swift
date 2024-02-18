@@ -1,5 +1,5 @@
 //
-//  NavigationViewModel.swift
+//  AppRouter.swift
 //  Haircut
 //
 //  Created by Isaac Sanchez on 24/10/23.
@@ -8,8 +8,8 @@
 import Foundation
 import SwiftUI
 
-class NavigationViewModel: ObservableObject {
-    static var shared = NavigationViewModel()
+class AppRouter: ObservableObject {
+    static var shared = AppRouter()
     @Published var stack: [ActiveScreen] = []
     @Published var sheet: ActiveSheet?
     @Published var showSheet = false

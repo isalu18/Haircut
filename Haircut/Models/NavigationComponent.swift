@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct NavigationComponent<T: View>: View {
-    @ObservedObject var navigationVM = NavigationViewModel.shared
+    @ObservedObject var navigationVM = AppRouter.shared
     @Binding var stack: [ActiveScreen]
 //    let haircutSalon: FetchedResults<HaircutSalon>.Element
     
